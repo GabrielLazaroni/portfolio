@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Gabriel</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <div>
+        <main x-data="{ openItem: null}" class="main-container">
+            <section class="menu-project-container">
+                <section class="title-menu-container">
+                    <div class="container-title">
+                        <h2 class="title">Gabriel Augusto</h2>
+                        <p class="subtitle">Full-stack Developer & Designer</p>
+                    </div>
+                    </h1>
+                    <ol class="menu">
+                        <li class="item" x-on:click="openItem === 'home' ? openItem = null : openItem = 'home'">
+                            Home
+                            <span x-text="openItem === 'home' ? '●' : ''"></span>
+                        </li>
+                        <li class="item1" x-on:click="openItem === 'project' ? openItem = null : openItem = 'project'">
+                            Projects
+                            <span x-text="openItem === 'project' ? ' ●' : ''"></span>
+                        </li>
+                        <li class="item2" x-on:click="openItem === 'contact' ? openItem = null : openItem = 'contact'">
+                            Contact
+                            <span x-text="openItem === 'contact' ? ' ●' : ''">
+                            </span>
+                        </li>
+                    </ol>
+                </section>
+            </section>
+            <section class="project" x-show="openItem === 'project'" x-transition.duration.2000ms>
+                <div class="project-container-date">
+                    <p class="project-paragraph">2024/Comission/SaaS</p>
+                    <a class="project-link">BeHealth</a>
+                </div>
+                <div class="project-container-date">
+                    <p class="project-paragraph">2023/Comission/LandingPage</p>
+                    <a class="project-link">Vim</a>
+                </div>
+                <div class="project-container-date">
+                    <p class="project-paragraph">2022/Comission/Portfólio</p>
+                    <a class="project-link" target="blank" href="https://rfaelbatista.github.io/rafaelbatista/">
+                        Rafael Batista
+                    </a>
+                </div>
+            </section>
+
+            <section class="container-contact">
+                <section class="contact">
+                    <div x-show="openItem === 'contact'" class="contact-itens" x-transition.duration.2000ms>
+                        <a class="contact-link" href="https://www.linkedin.com/in/gabriel-augusto-705200151/" target="blank">LinkedIn</a>
+                        <a class="contact-link" href="https://www.instagram.com/gabrielauggusto/" target="blank">Instagram</a>
+                        <a class="contact-link" href="https://github.com/gabriellazaroni" target="blank">GitHub</a>
+                        <span>gabriellggomes@gmail.com</span>
+                        <span>+55 31 984481479</span>
+                    </div>
+                </section>
+                <section class="home" x-show="openItem === 'home'" x-transition:enter.duration.2000ms x-transition:leave.duration.0ms>
+                    <span>Born in 1994</span>
+                    <span>in Minas Gerais Brazil</span>
+                    <span>I believe</span>
+                    <span>technology embodies</span>
+                    <span>the best aspects of </span>
+                    <span>human nature and</span>
+                    <span>duplicates itself </span>
+                    <span>like a cell.</span>
+                    <span>Software development</span>
+                    <span>can change lifes.</span>
+                </section>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

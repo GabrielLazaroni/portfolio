@@ -1,0 +1,268 @@
+:root {
+  --white: #fff;
+  --black: #000;
+
+  --gray-100: #dcdcdc;
+  --gray-200: #c9c9c9;
+  --gray-300: #686868;
+
+  --font-l: clamp(2rem, 9vw, 3rem); /* 48px */
+  --font-n: clamp(0.8rem, 9vw, 1rem); /* 16px */
+  --font-sm: clamp(0.812rem, 9vw, 0.812rem); /* 13px */
+  --font-xs: clamp(0.625rem, 2vw, 0.625rem); /* 10px */
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  font-weight: 200;
+  src: url("./font/NeueMontreal-normal-200-100.ttf");
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  font-weight: 400;
+  src: url("./font/NeueMontreal-normal-400-100.ttf");
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  font-weight: 600;
+  src: url("./font/NeueMontreal-normal-600-100.ttf");
+}
+
+body {
+  margin: 0;
+  position: relative;
+  font-family: "Neue Montreal", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: var(--gray-200);
+  user-select: none;
+  width: 100vw;
+  height: 100vh; 
+  overflow: hidden;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+.main-container {
+  position: absolute;
+  border: 1px solid var(--white);
+  width: 94vw;
+  height: 94vh;
+  transform: translate(3%, 3%);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 505px) {
+  .main-container {
+    background-color: transparent;
+  }
+}
+
+.main-container::before {
+  content: "Created by Gabriel Augusto 2024";
+  position: absolute;
+  left: -5px;
+  bottom: 0;
+  transform-origin: bottom left;
+  transform: rotate(-90deg);
+  color: var(--gray-300);
+  font-size: var(--font-xs);
+  padding-left: 5px;
+}
+
+@media (max-width: 550px) {
+  .main-container::before {
+    display: none;
+  }
+}
+
+.main-container::after {
+  content: "Gabriel Reproduction, reposting or modification of the content of this site is prohibited.";
+  position: absolute;
+  left: 0;
+  bottom: -18px;
+  color: var(--gray-300);
+  font-size: var(--font-xs);
+}
+
+@media (max-width: 550px) {
+  .main-container::after {
+    display: none;
+  }
+}
+
+.title-menu-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-title {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 50px 25px 50px;
+  gap: 15px;
+}
+
+.title {
+  font-size: var(--font-l);
+  font-weight: 200;
+}
+
+@media (max-width: 505px) {
+  .title {
+    font-size: 32px;
+  }
+}
+
+.subtitle {
+  font-size: var(--font-n);
+}
+
+@media (max-width: 505px) {
+  .subtitle {
+    font-size: 12px;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+  padding: 0 50px;
+}
+
+.menu-project-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.item,
+.item1,
+.item2,
+.item3 {
+  cursor: pointer;
+  transition: color 0.2s ease;
+  font-weight: 600;
+  font-size: var(--font-sm);
+  max-width: 70px;
+  width: 100%;
+}
+
+.item:hover,
+.item1:hover,
+.item2:hover,
+.item3:hover {
+  color: #686868;
+}
+
+@media (max-width: 505px) {
+  .item {
+    display: none;
+  }
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: var(--font-sm);
+  margin-right: 50px;
+  line-height: 20px;
+}
+
+@media (max-width: 505px) {
+  .home {
+    display: none;
+  }
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-right: 50px;
+  font-weight: 600;
+}
+
+@media (max-width: 1010px) {
+  .project {
+    align-items: end;
+  }
+}
+
+.project-container-date {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+  justify-content: end;
+  align-items: end;
+}
+
+@media (max-width: 1010px) {
+  .project-container-date {
+    gap: 5px;
+  }
+}
+
+.project-link {
+  color: var(--gray-100);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 200;
+  font-size: var(--font-l);
+}
+
+.project-link:hover {
+  color: var(--gray-300);
+}
+
+.project-paragraph {
+  font-size: var(--font-sm);
+  margin-bottom: 10px;
+}
+
+.container-contact {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-height: 200px;
+}
+
+@media (max-width: 505px) {
+  .container-contact {
+    max-height: 400px;
+    flex-direction: column-reverse;
+  }
+}
+
+.contact-itens {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.contact-link {
+  color: var(--gray-100);
+  font-size: var(--font-n);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 600;
+}
+
+.contact-link:hover {
+  color: var(--gray-300);
+}
+
